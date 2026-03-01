@@ -8,16 +8,24 @@ public class BeforeMethod_two_sites_Tema {
 
     @BeforeMethod
     public void setUp() {
-        driver = new ChromeDriver ();
-        driver.get("https://www.imd.org/degree/mba/");
-        driver.get("https://www.apple.com");
+
+        driver = new ChromeDriver();
     }
+
+
     @Test
     public void SearchTest() {
-        driver.findElement(By.xpath("//button[contains(text(), 'Agree & Proceed')]"));;
+        driver.get("https://www.imd.org/degree/mba/");
+        driver.findElement(By.xpath("//button[contains(text(), 'Agree & Proceed')]"));
+        ;
 
     }
 
+    @Test
+
+    public void SearchTest2() {
+        driver.get("https://www.apple.com");
+    }
 
     @AfterMethod
     public void tearDown() {
@@ -25,3 +33,4 @@ public class BeforeMethod_two_sites_Tema {
     }
 
 }
+
