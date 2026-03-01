@@ -11,10 +11,11 @@ public class title_search_Tema {
     WebDriver driver;
 
     @BeforeClass
-    public void setup(){
+    public void setup() {
         driver = new ChromeDriver();
         driver.get("https://www.imd.org/degree/mba/");
-        driver.findElement(By.xpath("//button[contains(text(), 'Agree & Proceed')]"));;
+        driver.findElement(By.xpath("//button[contains(text(), 'Agree & Proceed')]"));
+        ;
     }
 
     @Test
@@ -28,6 +29,7 @@ public class title_search_Tema {
         Assert.assertEquals(actualTitle, expectedTitle, "Verify the page title.");
 
     }
+
     @Test
     public void searchTest2() {
         String actualTitle = driver.getTitle();
@@ -40,9 +42,11 @@ public class title_search_Tema {
         String keyword = "MBA";
         Assert.assertTrue(actualTitle.contains(keyword),
                 "The title does not contain the expected keyword: " + keyword);
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
+
+        //@AfterClass
+
+       // public void tearDown () {
+        //    driver.quit();
+       // }
     }
 }
-
