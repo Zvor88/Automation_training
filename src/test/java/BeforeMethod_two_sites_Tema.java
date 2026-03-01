@@ -6,7 +6,7 @@ import org.testng.annotations.*;
 public class BeforeMethod_two_sites_Tema {
     WebDriver driver;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
 
         driver = new ChromeDriver();
@@ -27,7 +27,7 @@ public class BeforeMethod_two_sites_Tema {
         driver.get("https://www.apple.com");
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         driver.quit();
     }
